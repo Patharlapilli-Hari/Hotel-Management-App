@@ -1,0 +1,13 @@
+{
+  "name": "hostel-management-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hostel Room Allocation & Complaint Management System",
+  "scripts": {
+    "install:all": "npm install --prefix packages/backend && npm install --prefix packages/frontend",
+    "backend": "npm run dev --prefix packages/backend",
+    "frontend": "npm run dev --prefix packages/frontend",
+    "dev": "start cmd /k \"npm run backend\" && start cmd /k \"npm run frontend\"",
+    "start": "npm run dev"
+  }
+}

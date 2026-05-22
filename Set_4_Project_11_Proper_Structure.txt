@@ -1,0 +1,319 @@
+SET 4 - PROJECT 11
+
+ASSIGNMENT: Hostel Room Allocation & Complaint Management System
+
+====================================================
+1. CATEGORY DETAILS
+====================================================
+
+Required Tech Stack:
+- Frontend: ReactJS
+- Backend: Node.js + Express
+- Database: SQLite
+
+Difficulty:
+- Medium
+
+Expected Duration:
+- 2 to 4 days for a focused implementation
+
+Main Objective:
+Build a hostel management platform to manage room allocations,
+student complaints, and hostel operations efficiently.
+
+
+====================================================
+2. PROBLEM STATEMENT
+====================================================
+
+Many colleges and universities still manage hostel room allocations
+and student complaints manually, which creates issues in room tracking,
+maintenance management, and communication efficiency.
+
+Your task is to build a centralized Hostel Room Allocation &
+Complaint Management System that allows wardens to allocate rooms,
+students to raise complaints, and administrators to monitor hostel
+operations effectively.
+
+
+====================================================
+3. USER ROLES
+====================================================
+
+- Student
+- Warden
+- Maintenance Staff
+- Admin
+
+
+====================================================
+4. REQUIRED FEATURES
+====================================================
+
+- Wardens can create hostel room records with room number,
+  block name, capacity, room type, and occupancy status.
+
+- Students can apply for hostel rooms by providing academic
+  and personal details.
+
+- Prevent room allocation when room capacity is already full.
+
+- Students can raise complaints related to:
+  * Electricity
+  * Water
+  * Cleanliness
+  * Internet
+  * Maintenance issues
+
+- Maintenance staff can update complaint statuses:
+  * Open
+  * In Progress
+  * Resolved
+  * Closed
+
+- Wardens can transfer students between rooms and update
+  occupancy records.
+
+- Dashboard should show:
+  * Total rooms
+  * Occupied rooms
+  * Pending complaints
+  * Hostel occupancy statistics
+
+- Provide search and filters by:
+  * Hostel block
+  * Room type
+  * Complaint category
+  * Complaint status
+
+- Generate downloadable room allocation reports and
+  complaint summaries.
+
+- Display room allocation confirmations and complaint
+  update notifications in the UI.
+
+
+====================================================
+5. SUGGESTED DATABASE TABLES
+====================================================
+
+Design the SQLite database using the following suggested
+tables. You may add additional tables if required, but the
+core business data must be stored in SQLite.
+
+1. users
+   Purpose:
+   - Store student, warden, maintenance staff,
+     and admin details.
+
+2. hostel_rooms
+   Purpose:
+   - Store hostel room information and
+     occupancy details.
+
+3. room_allocations
+   Purpose:
+   - Store room assignment records for students.
+
+4. complaints
+   Purpose:
+   - Store hostel complaint details and
+     status updates.
+
+5. complaint_categories
+   Purpose:
+   - Store complaint category information.
+
+6. maintenance_logs
+   Purpose:
+   - Store complaint resolution activity history.
+
+
+====================================================
+6. MINIMUM API REQUIREMENTS
+====================================================
+
+POST   /api/hostel-rooms
+Purpose:
+- Create hostel room record
+
+GET    /api/hostel-rooms
+Purpose:
+- List hostel rooms with filters
+
+POST   /api/room-allocations
+Purpose:
+- Allocate room to student
+
+POST   /api/complaints
+Purpose:
+- Create hostel complaint
+
+PUT    /api/complaints/:id/status
+Purpose:
+- Update complaint status
+
+GET    /api/complaints
+Purpose:
+- Fetch complaint records
+
+GET    /api/dashboard/summary
+Purpose:
+- Return hostel analytics summary
+
+
+====================================================
+7. FRONTEND PAGES / SCREENS
+====================================================
+
+- Hostel room listing page
+- Room allocation management page
+- Student complaint submission page
+- Complaint tracking page
+- Maintenance management page
+- Hostel analytics dashboard
+
+
+====================================================
+8. BUSINESS RULES & VALIDATION REQUIREMENTS
+====================================================
+
+- All required fields must be validated on both
+  frontend and backend.
+
+- Backend should return meaningful HTTP status
+  codes and clear error messages.
+
+- SQLite should be the source of truth.
+  Do not keep critical business data only in
+  frontend state.
+
+- Use reusable React components for:
+  * Forms
+  * Tables
+  * Filters
+  * Confirmation modals
+  * Status badges
+
+- Add pagination or reasonable list limits where
+  data can grow.
+
+- Use protected routes or role-based UI behavior
+  wherever user roles are involved.
+
+- Prevent duplicate active room allocations
+  for the same student.
+
+- Resolved complaints should automatically
+  update maintenance history logs.
+
+
+====================================================
+9. BONUS ENHANCEMENTS
+====================================================
+
+- Roommate preference selection
+- Email/SMS complaint notifications
+- Export hostel occupancy and complaint reports
+
+
+====================================================
+10. EVALUATION RUBRIC
+====================================================
+
+1. Feature Completeness (25 Marks)
+- All required flows work end-to-end with correct
+  role behavior.
+
+2. Backend/API Quality (20 Marks)
+- Clean Express routes, validations,
+  error handling, and proper SQLite persistence.
+
+3. Frontend UI/UX (20 Marks)
+- Readable React components, responsive layout,
+  loading/empty/error states, and clean navigation.
+
+4. Database Design (15 Marks)
+- Normalized tables, useful relationships,
+  seed data, and correct business rules.
+
+5. Code Quality (10 Marks)
+- Modular structure, meaningful names,
+  no unnecessary hardcoding, and
+  maintainable logic.
+
+6. Deployment and Demo (10 Marks)
+- Working deployed link, clear README,
+  and complete video walkthrough.
+
+
+====================================================
+11. SUBMISSION GUIDELINES
+====================================================
+
+- Submit the GitHub repository link.
+  Repository must include:
+  * Frontend
+  * Backend
+  * Database/migration files
+  * Seed data (if any)
+  * Clear README
+
+- Submit the deployed/published application link.
+  App should be accessible without local setup.
+  Include demo login credentials if authentication
+  is implemented.
+
+- Submit the video recording link.
+  Video should be 5 to 8 minutes and show:
+  * Full user flow
+  * Backend/API usage
+  * SQLite persistence
+  * Validations
+  * Deployment link
+
+- README must contain:
+  * Setup steps
+  * npm commands
+  * Environment variable details
+  * Database initialization steps
+  * API endpoint summary
+  * Screenshots of final UI
+
+- Use:
+  * ReactJS (Frontend)
+  * Node.js + Express (Backend)
+  * SQLite (Database)
+
+Do NOT replace the required stack with:
+- Firebase
+- MongoDB
+- Supabase
+- No-code backend
+
+- Code should be:
+  * Clean
+  * Modular
+  * Readable
+
+- Avoid hardcoding important data in the UI.
+  Store and fetch data through backend APIs.
+
+- Include:
+  * Error handling
+  * Form validation
+  * Loading states
+  * Empty states
+  * Basic responsive design
+
+- Final submission should be production-ready:
+  * No console errors
+  * No broken links
+  * No incomplete placeholder pages
+
+
+IMPORTANT:
+Submit all three required links clearly in one final response:
+1. GitHub Repository Link
+2. Deployed/Published Application Link
+3. Video Recording Link
